@@ -27,7 +27,7 @@ interface INews extends INewsShort {
   url: 'https://localhost/agendo-sistema/api'
 })
 
-export class ApiService extends ResourceCRUD<IQueryInput, INewsShort, INews> {
+export class UserService extends ResourceCRUD<IQueryInput, INewsShort, INews> {
 
   @ResourceAction({
     method: RequestMethod.Put,
