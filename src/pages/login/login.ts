@@ -16,9 +16,4 @@ export class Login {
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
-
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad Login');
-  }
-
 }
