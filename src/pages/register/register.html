@@ -1,14 +1,47 @@
 <ion-header>
+    <ion-navbar>
 
-  <ion-navbar>
-    <ion-title>Register</ion-title>
-  </ion-navbar>
-
+    </ion-navbar>
 </ion-header>
 
 
 <ion-content padding>
-    <ion-footer>
-      <button> > </button>
-    </ion-footer>
+    <ion-row>
+        <ion-col>
+            <div class="logo-image">
+                <img alt="Logo" src="assets/img/logo.png"/>
+            </div>
+        </ion-col>
+    </ion-row>
+
+    <form (ngSubmit)="doRegister()">
+        <ion-row>
+            <ion-col>
+                <ion-list inset>
+                    <ion-item>
+                        <ion-label floating>Nome</ion-label>
+                        <ion-input type="text"></ion-input>
+                    </ion-item>
+
+                    <ion-item>
+                        <ion-label floating>E-mail</ion-label>
+                        <ion-input type="text"></ion-input>
+                    </ion-item>
+
+                    <ion-item>
+                        <ion-label floating>Senha</ion-label>
+                        <ion-input type="password"></ion-input>
+                    </ion-item>
+                </ion-list>
+            </ion-col>
+        </ion-row>
+
+        <ion-row>
+            <ion-col>
+                <button ion-button full large>
+                    Vamos lá
+                </button>
+            </ion-col>
+        </ion-row>
+    </form>
 </ion-content>

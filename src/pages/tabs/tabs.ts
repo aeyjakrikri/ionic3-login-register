@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import {IonicPage} from 'ionic-angular';
+import {IonicPage, NavController} from 'ionic-angular';
 
 @IonicPage()
 @Component({
@@ -8,9 +8,12 @@ import {IonicPage} from 'ionic-angular';
 export class Tabs {
 
     tab1Root = 'Home';
-    tab2Root = 'Login';
 
-    constructor() {
+    constructor(public navCtrl: NavController) {
 
+    }
+
+    doLogout() {
+        this.navCtrl.setRoot('Login');
     }
 }
