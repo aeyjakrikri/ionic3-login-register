@@ -42,16 +42,12 @@ export class Login {
     }
 
     doLogin() {
-        this.auth.login(this.loginForm.value)
-            .$observable
-            .subscribe(
-                (response) => {
-                    console.log(response);
-                    // do some magic after receiving news
-                }
-            );
-        ;
-        this.presentToast();
-        this.navCtrl.setRoot('Tabs');
+        this.auth.login(this.loginForm.value).subscribe(response => {
+            console.log('Object saved OK');
+        }, function () {
+            console.log('There was an error saving');
+        });
+        // this.presentToast();
+        // this.navCtrl.setRoot('Tabs');
     }
 }
