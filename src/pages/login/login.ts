@@ -14,7 +14,8 @@ import {IonicPage, NavController, ToastController} from 'ionic-angular';
 })
 export class Login {
 
-    constructor(public navCtrl: NavController, public toastCtrl: ToastController) {
+    constructor(private navCtrl: NavController,
+                private toastCtrl: ToastController) {
     }
 
     goToRegister() {
@@ -24,12 +25,13 @@ export class Login {
     presentToast() {
         let toast = this.toastCtrl.create({
             message: 'User logged in successfully',
-            duration: 3000
+            duration: 3000,
+            position: 'top'
         });
         toast.present();
     }
 
-    doLogin(){
+    doLogin() {
         this.presentToast();
         this.navCtrl.setRoot('Tabs');
     }

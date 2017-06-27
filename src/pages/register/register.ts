@@ -13,6 +13,11 @@ import {IonicPage, NavController, ToastController} from 'ionic-angular';
     templateUrl: 'register.html',
 })
 export class Register {
+    public user: {
+        name: string,
+        email: string,
+        password: string
+    };
 
     constructor(public navCtrl: NavController, public toastCtrl: ToastController) {
     }
@@ -20,9 +25,13 @@ export class Register {
     presentToast() {
         let toast = this.toastCtrl.create({
             message: 'User logged in successfully',
-            duration: 3000
+            duration: 3000,
+            position: 'top'
         });
-        toast.present();
+
+        toast.present().then(() => {
+            console.log('Displayed');
+        });
     }
 
     doRegister() {

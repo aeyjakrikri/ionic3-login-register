@@ -9,7 +9,11 @@ import {SplashScreen} from '@ionic-native/splash-screen';
 export class MainApp {
     rootPage: any = 'Login';
 
-    constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
+    constructor(// private translate: TranslateService,
+        private platform: Platform,
+        private statusBar: StatusBar,
+        private splashScreen: SplashScreen) {
+
         platform.ready().then(() => {
             // Okay, so the platform is ready and our plugins are available.
             // Here you can do any higher level native things you might need.

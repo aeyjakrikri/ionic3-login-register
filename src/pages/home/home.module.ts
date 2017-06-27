@@ -9,6 +9,8 @@ import {IonicPageModule} from 'ionic-angular';
     imports: [
         IonicPageModule.forChild(Home)
     ],
+    providers: [
+    ]
 })
 
 export class HomePageModule {

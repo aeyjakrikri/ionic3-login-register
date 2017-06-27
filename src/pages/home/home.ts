@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {NavController} from 'ionic-angular';
 import {IonicPage} from 'ionic-angular';
 
@@ -8,8 +8,11 @@ import {IonicPage} from 'ionic-angular';
     templateUrl: 'home.html'
 })
 
-export class Home {
+export class Home implements OnInit {
     constructor(public navCtrl: NavController) {
 
+    }
+
+    ngOnInit(): any {
     }
 }
