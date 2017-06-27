@@ -7,18 +7,18 @@
         </ion-col>
     </ion-row>
 
-    <form (ngSubmit)="doLogin()">
+    <form (ngSubmit)="doLogin()" [formGroup]="loginForm">
         <ion-row>
             <ion-col>
                 <ion-list inset>
                     <ion-item>
                         <ion-label floating>E-mail</ion-label>
-                        <ion-input type="text"></ion-input>
+                        <ion-input type="text" formControlName="email"></ion-input>
                     </ion-item>
 
                     <ion-item>
                         <ion-label floating>Senha</ion-label>
-                        <ion-input type="password"></ion-input>
+                        <ion-input type="password" formControlName="password"></ion-input>
                     </ion-item>
                 </ion-list>
             </ion-col>
@@ -26,7 +26,7 @@
 
         <ion-row>
             <ion-col>
-                <button ion-button full large>
+                <button ion-button full large type="submit" [disabled]="!loginForm.valid">
                     Entrar
                 </button>
             </ion-col>

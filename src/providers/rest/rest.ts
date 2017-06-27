@@ -1,9 +1,17 @@
-import {Resource, ResourceActionBase} from 'ngx-resource';
-import {Request} from '@angular/http';
-import {Observable, Subscriber} from 'rxjs';
-import {AuthServiceHelper} from '../helpers/authService.helper';
+import { Resource, ResourceActionBase } from 'ngx-resource';
+import { Request } from '@angular/http';
+import { Observable, Subscriber } from 'rxjs';
+import { Injectable } from '@angular/core';
+import { AuthServiceHelper } from '../../helpers/authService.helper';
 
-export class RestService extends Resource {
+/*
+ Generated class for the RestProvider provider.
+
+ See https://angular.io/docs/ts/latest/guide/dependency-injection.html
+ for more info on providers and Angular DI.
+ */
+@Injectable()
+export class RestProvider extends Resource {
 
     public static BASE_URL = 'http://localhost/example/api';
 
