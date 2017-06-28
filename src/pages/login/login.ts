@@ -32,11 +32,11 @@ export class Login {
         this.navCtrl.push('Register');
     }
 
-    presentToast() {
+    presentToast(text?: string) {
         let toast = this.toastCtrl.create({
-            message: 'User logged in successfully',
-            duration: 3000,
-            position: 'top'
+            message: text ? text : 'User logged in successfully',
+            duration: 2000,
+            position: 'top',
         });
         toast.present();
     }
@@ -45,13 +45,13 @@ export class Login {
         this.auth.login(this.loginForm.value)
             .$observable
             .subscribe(
-                (response) => {
-                    console.log(response);
-                    // do some magic after receiving news
-                }
-            );
-        ;
-        this.presentToast();
-        this.navCtrl.setRoot('Tabs');
+                response => {
+                    console.log('success', response);
+                    this.presentToast();
+                    this.navCtrl.setRoot('Tabs');
+                },
+                error => {
+                    this.presentToast(error.statusText);
+                });
     }
 }

@@ -4,21 +4,19 @@ import { ResourceAction, ResourceMethod, ResourceParams } from 'ngx-resource';
 import { RestProvider } from '../rest/rest';
 
 
-/*
- Generated class for the AuthProvider provider.
-
- See https://angular.io/docs/ts/latest/guide/dependency-injection.html
- for more info on providers and Angular DI.
+/**
+ Class for the AuthProvider.
  */
+
 @Injectable()
 @ResourceParams({
-    url: RestProvider.BASE_URL + 'v1/auth'
+    url: RestProvider.BASE_URL + '/v1/users'
 })
 export class AuthProvider extends RestProvider {
     @ResourceAction({
         method: RequestMethod.Post,
         path: '/login',
-        noAuth: true
+        skipAuthorization: true
     })
     login: ResourceMethod<{ login: string, password: string }, any>;
 

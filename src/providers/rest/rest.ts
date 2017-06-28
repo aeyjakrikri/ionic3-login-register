@@ -4,25 +4,23 @@ import { Observable, Subscriber } from 'rxjs';
 import { Injectable } from '@angular/core';
 import { AuthServiceHelper } from '../../helpers/authService.helper';
 
-/*
- Generated class for the RestProvider provider.
-
- See https://angular.io/docs/ts/latest/guide/dependency-injection.html
- for more info on providers and Angular DI.
+/**
+ Generated class for the RestProvider.
  */
+
 @Injectable()
 export class RestProvider extends Resource {
 
-    public static BASE_URL = 'http://localhost/example/api';
+    public static BASE_URL = 'http://localhost/insulinapp-api/api/web';
 
     $getHeaders(methodOptions: any): any {
         let headers = super.$getHeaders();
 
         // Extending our headers with Authorization
-        if (!methodOptions.noAuth) {
+        if (!methodOptions.skipAuthorization) {
             headers = AuthServiceHelper.extendHeaders(headers);
         }
-        console.log(headers);
+
         return headers;
     }
 
